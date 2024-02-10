@@ -9,3 +9,5 @@ RUN pip install -r requirements.txt
 COPY . /fassite/
 
 EXPOSE 8050
+
+RUN chmod a+x docker/*.sh
