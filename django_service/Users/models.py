@@ -12,10 +12,11 @@ class User(models.Model):
         validators=[phone_regex], max_length=9, unique=True
     )
     email = models.EmailField(unique=True)
+    password = models.CharField(max_length=255)
     registration_date = models.DateTimeField(auto_now_add=True)
     last_login_date = models.DateTimeField(null=True, blank=True)
     profile_picture = models.ImageField(
-        upload_to='uploads/profile', null=True, blank=True)
+        upload_to='user-profile/', null=True, blank=True)
 
     def __str__(self):
-        return f"id:{self.pk} | name:{self.name}"
+        return f"id: {self.pk} | name: {self.name}"
