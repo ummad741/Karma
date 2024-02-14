@@ -15,7 +15,7 @@ class Admin(models.Model):
     registration_date = models.DateTimeField(auto_now_add=True)
     last_login_date = models.DateTimeField(null=True, blank=True)
     profile_picture = models.ImageField(
-        upload_to='uploads/profile', null=True, blank=True)
+        upload_to='admin-profile/', null=True, blank=True)
 
     def __str__(self) -> str:
         return self.name

@@ -43,13 +43,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'drf_yasg',
-    'rest_framework_simplejwt',   
+    'rest_framework_simplejwt',
     'Users',
     'Orders',
     'Products',
     'Admins',
 ]
-
 
 
 MIDDLEWARE = [
@@ -105,6 +104,7 @@ SWAGGER_SETTINGS = {
     }
 }
 
+
 # CORSHEADERS
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_ALLOW_ALL = True
@@ -124,8 +124,11 @@ CORS_ALLOW_METHODS = [
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=15),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+    # 'ROTATE_REFRESH_TOKENS': True,
+    # 'BLACKLIST_AFTER_ROTATION': True,
     "AUTH_HEADER_TYPES": ("Bearer",),
     "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
+    # "TOKEN_OBTAIN_SERIALIZER": "Users.serializers.MyTokenObtainPairSerializer",
 }
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
