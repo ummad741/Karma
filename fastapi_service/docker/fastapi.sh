@@ -2,6 +2,11 @@
 
 echo "fastapi is started"
 
-cd app
+# alembic upgrade head
 
-gunicorn main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind=0.0.0.0:8050
+cd src
+
+uvicorn main:app --host 0.0.0.0 --port 8055 --reload
+
+# this code can't reload app 
+# gunicorn -b 0.0.0.0:8050 -w 4 -k uvicorn.workers.UvicornWorker main:app --reload

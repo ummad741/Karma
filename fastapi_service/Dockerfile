@@ -4,10 +4,8 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE 1
 
 WORKDIR /fassite
-COPY requirements.txt /fassite/requirements.txt
+COPY requirements.txt .
 RUN pip install -r requirements.txt
-COPY . /fassite/
-
-EXPOSE 8050
+COPY . .
 
 RUN chmod a+x docker/*.sh

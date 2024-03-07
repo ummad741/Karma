@@ -9,6 +9,4 @@ COPY requirements.txt /djansite/requirements.txt
 RUN pip install -r requirements.txt
 COPY . /djansite/
 
-EXPOSE 8000
-
 RUN chmod a+x docker/*.sh
